@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>URL History Eraser</title>
+    <link rel="stylesheet" href="../shared/base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <span class="title" data-i18n="extName"></span>
+      <label class="switch" data-i18n-title="globalSwitch">
+        <input type="checkbox" id="enabled" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <div id="blocked" class="alert alert-danger" hidden data-i18n="blockedWarning"></div>
+    <div id="disabled" class="alert alert-muted" hidden data-i18n="disabledWarning"></div>
+
+    <main class="site">
+      <div class="row">
+        <span class="label" data-i18n="currentSite"></span>
+        <span id="site-url" class="value mono"></span>
+      </div>
+      <div class="row" id="status-row">
+        <span class="label" data-i18n="status"></span>
+        <span id="site-status" class="pill"></span>
+      </div>
+
+      <p id="unsupported" class="hint" hidden data-i18n="unsupportedPage"></p>
+
+      <div id="protected-view" hidden>
+        <div class="row">
+          <span class="label" data-i18n="matchedRule"></span>
+          <span id="matched-rule" class="value mono"></span>
+        </div>
+        <p id="parent-hint" class="hint" hidden data-i18n="removeParentHint"></p>
+        <button id="remove-btn" type="button" class="btn btn-secondary btn-block" data-i18n="removeProtection"></button>
+      </div>
+
+      <form id="add-view" hidden>
+        <label class="field">
+          <span class="label" data-i18n="scope"></span>
+          <select id="scope"></select>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="include-sub" />
+          <span data-i18n="includeSubdomains"></span>
+        </label>
+        <label class="check" id="path-only-row">
+          <input type="checkbox" id="path-only" />
+          <span id="path-only-label"></span>
+        </label>
+        <p id="preview" class="hint mono"></p>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="addProtection"></button>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <span id="rule-count" class="muted"></span>
+      <span class="actions">
+        <button id="sweep-btn" type="button" class="btn btn-link" data-i18n="sweepNow"></button>
+        <button id="options-btn" type="button" class="btn btn-link" data-i18n="openSettings"></button>
+      </span>
+    </footer>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

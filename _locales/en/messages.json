@@ -1,0 +1,126 @@
+{
+  "extName": { "message": "URL History Eraser" },
+  "extDescription": { "message": "Keep the history of chosen sites from being saved or synced, while staying signed in." },
+  "cmdToggleSite": { "message": "Toggle protection for the current site" },
+
+  "badgeBlocked": { "message": "Browser policy forbids deleting history; the extension cannot work" },
+  "badgeDisabled": { "message": "URL History Eraser: off" },
+
+  "globalSwitch": { "message": "Master switch" },
+  "blockedWarning": { "message": "Browser policy forbids deleting history (common on work or school devices). The extension cannot work here." },
+  "disabledWarning": { "message": "The extension is off. Visits to protected sites will be kept in history." },
+  "never": { "message": "Never" },
+
+  "currentSite": { "message": "Current site" },
+  "status": { "message": "Status" },
+  "statusProtected": { "message": "Protected" },
+  "statusUnprotected": { "message": "Not protected" },
+  "unsupportedPage": { "message": "This is not a regular web page." },
+  "matchedRule": { "message": "Matched rule" },
+  "removeProtection": { "message": "Remove protection" },
+  "confirmRemove": { "message": "Click again to confirm" },
+  "removeParentHint": { "message": "This rule also protects other addresses; they will lose protection too." },
+  "scope": { "message": "Scope" },
+  "includeSubdomains": { "message": "Include subdomains" },
+  "onlyPath": {
+    "message": "Only path $PATH$",
+    "placeholders": { "path": { "content": "$1" } }
+  },
+  "addProtection": { "message": "Protect" },
+  "willProtect": {
+    "message": "Will protect: $RULE$",
+    "placeholders": { "rule": { "content": "$1" } }
+  },
+  "ruleCount": {
+    "message": "$COUNT$ rules",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "sweepNow": { "message": "Sweep now" },
+  "sweeping": { "message": "Sweeping…" },
+  "sweepDone": {
+    "message": "Done, $COUNT$ entries removed",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "sweepFailed": { "message": "Sweep failed" },
+  "openSettings": { "message": "Settings" },
+  "added": { "message": "Protection added" },
+  "removed": { "message": "Protection removed" },
+
+  "optionsTitle": { "message": "URL History Eraser Settings" },
+  "sectionRules": { "message": "Rules" },
+  "rulesIntro": { "message": "History of addresses matching a rule is deleted right after each visit. Domain-only rules include subdomains by default; path rules match by path segment, e.g. /foo matches /foo/bar but not /foobar." },
+  "ruleInputPlaceholder": { "message": "example.com or https://example.com/path" },
+  "notePlaceholder": { "message": "Note (optional)" },
+  "addRule": { "message": "Add" },
+  "ruleExists": { "message": "This rule already exists" },
+  "errEmpty": { "message": "Enter an address" },
+  "errInvalid": { "message": "Unrecognized address" },
+  "errScheme": { "message": "Only http and https addresses are supported" },
+  "previewNormalized": { "message": "Normalized: " },
+  "previewMatches": { "message": "Matches: " },
+  "previewMisses": { "message": "Does not match: " },
+  "filterPlaceholder": { "message": "Search rules" },
+  "colRule": { "message": "Rule" },
+  "colSubdomains": { "message": "Subdomains" },
+  "colEnabled": { "message": "Enabled" },
+  "colNote": { "message": "Note" },
+  "colActions": { "message": "Actions" },
+  "open": { "message": "Open" },
+  "delete": { "message": "Delete" },
+  "confirmDeleteRule": {
+    "message": "Delete rule \"$RULE$\"?\n\nDeleted history cannot be restored. After the rule is removed, visits to this address will be kept in history.",
+    "placeholders": { "rule": { "content": "$1" } }
+  },
+  "noRules": { "message": "No rules yet. Add an address above." },
+  "noMatchRules": { "message": "No matching rules." },
+  "ruleAdded": { "message": "Rule added" },
+  "ruleDeleted": { "message": "Rule deleted" },
+  "saved": { "message": "Saved" },
+
+  "sectionSweep": { "message": "Sweeping" },
+  "sweepHint": { "message": "A quick sweep searches history by domain and is fast. A full sweep checks every history entry and may take a while for large histories. Both run automatically on a schedule." },
+  "lastQuickSweep": { "message": "Last quick sweep" },
+  "lastFullSweep": { "message": "Last full sweep" },
+  "fullSweepNow": { "message": "Full sweep now" },
+
+  "sectionOptions": { "message": "Options" },
+  "optPurgeOnAdd": { "message": "When adding a rule, delete existing history for it" },
+  "optCleanRecentlyClosed": { "message": "Remove protected addresses from \"Recently closed\"" },
+  "optCleanRecentlyClosedHint": { "message": "Works by briefly re-adding a history entry and deleting it, which triggers Chrome's cleanup. With history sync on, this adds one more very short upload window." },
+  "optCleanDownloads": { "message": "Remove download entries from protected addresses (files are kept)" },
+  "optCleanDownloadsHint": { "message": "Turning this on requests the \"Manage your downloads\" permission." },
+  "permissionDenied": { "message": "Permission was not granted; the feature stays off." },
+  "optShowIndicator": { "message": "Show a colored toolbar icon on protected tabs" },
+  "optShowIndicatorHint": { "message": "Turn off if you do not want others to notice from the icon." },
+  "optQuickSweepInterval": { "message": "Quick sweep interval" },
+  "minutes": {
+    "message": "$N$ min",
+    "placeholders": { "n": { "content": "$1" } }
+  },
+
+  "sectionSync": { "message": "Sync" },
+  "syncIntro": { "message": "Deletions also create sync delete directives, so entries eventually disappear on your other devices. Two things are outside the extension's control:" },
+  "syncPoint1": { "message": "An entry may be uploaded in the instant between being written and being deleted; the delete directive removes it afterwards." },
+  "syncPoint2": { "message": "Chrome syncs your open tabs to other devices, so a protected page is visible there while it is open." },
+  "syncStrictAdvice": { "message": "Strict mode: turn off \"History\" and \"Open tabs\" in sync settings, and protected addresses are never uploaded." },
+  "syncActivityAdvice": { "message": "If your Google Account's Web & App Activity includes Chrome history, consider turning it off as well for strict use." },
+  "openSyncSettings": { "message": "Open sync settings" },
+
+  "sectionData": { "message": "Import / Export" },
+  "dataHint": { "message": "Rules are stored on this device only and are not synced. Use import / export to move them between devices." },
+  "exportRules": { "message": "Export rules" },
+  "importRules": { "message": "Import rules" },
+  "importDone": {
+    "message": "Import finished, $COUNT$ rules added",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "importFailed": { "message": "Import failed: invalid file format" },
+
+  "sectionLimits": { "message": "Known limitations" },
+  "limit1": { "message": "Not zero-write: entries are written and then deleted immediately, leaving a very short window." },
+  "limit2": { "message": "To keep you signed in, cookies and site data are kept, so the domain appears in Chrome's site data list." },
+  "limit3": { "message": "Third-party domains used during sign-in (such as SSO) and searches for the site on a search engine need their own rules." },
+  "limit4": { "message": "The rule list is stored in plain text on this device and is visible on this page." },
+  "limit5": { "message": "Deleting history makes Chrome prune matching back/forward entries in open tabs and clear the \"last session\" restore data." },
+  "limit6": { "message": "If browser policy forbids deleting history (managed devices), the extension cannot work." }
+}

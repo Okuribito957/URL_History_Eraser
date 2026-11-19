@@ -1,0 +1,220 @@
+/* 弹窗与设置页共用的基础样式 */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f1f3f4;
+  --fg: #202124;
+  --fg-muted: #5f6368;
+  --border: #dadce0;
+  --primary: #1a73e8;
+  --primary-fg: #ffffff;
+  --success: #188038;
+  --success-bg: #e6f4ea;
+  --danger: #d93025;
+  --danger-bg: #fce8e6;
+  --radius: 8px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #202124;
+    --bg-soft: #2d2e31;
+    --fg: #e8eaed;
+    --fg-muted: #9aa0a6;
+    --border: #3c4043;
+    --primary: #8ab4f8;
+    --primary-fg: #202124;
+    --success: #81c995;
+    --success-bg: #1e3a2a;
+    --danger: #f28b82;
+    --danger-bg: #3c2422;
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.5 system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.mono {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+.muted,
+.hint {
+  color: var(--fg-muted);
+}
+
+.hint {
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+.alert {
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 12px;
+}
+
+.alert-danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.alert-muted {
+  background: var(--bg-soft);
+  color: var(--fg-muted);
+}
+
+.btn {
+  font: inherit;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.btn-danger {
+  background: var(--bg);
+  color: var(--danger);
+  border-color: var(--border);
+}
+
+.btn-link {
+  background: none;
+  color: var(--primary);
+  padding: 4px 6px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="search"],
+select {
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  min-width: 0;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+/* 开关 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  flex: none;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  border-radius: 20px;
+  transition: background 0.15s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+
+.switch input:checked + .slider {
+  background: var(--success);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(14px);
+}
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  background: var(--bg-soft);
+  color: var(--fg-muted);
+}
+
+.pill-on {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background: var(--fg);
+  color: var(--bg);
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  max-width: 90%;
+  z-index: 10;
+}

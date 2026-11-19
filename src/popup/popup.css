@@ -1,0 +1,72 @@
+body {
+  width: 340px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.alert {
+  margin: 10px 14px 0;
+}
+
+.site {
+  padding: 10px 14px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.label {
+  flex: none;
+  width: 64px;
+  color: var(--fg-muted);
+}
+
+.value {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.field select {
+  flex: 1;
+}
+
+#protected-view .btn,
+#add-view .btn {
+  margin-top: 8px;
+}
+
+#preview {
+  word-break: break-all;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px 8px 14px;
+  border-top: 1px solid var(--border);
+}

@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="optionsTitle">URL History Eraser</title>
+    <link rel="stylesheet" href="../shared/base.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-header">
+        <h1 data-i18n="optionsTitle"></h1>
+        <label class="switch" data-i18n-title="globalSwitch">
+          <input type="checkbox" id="enabled" />
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <div id="blocked" class="alert alert-danger" hidden data-i18n="blockedWarning"></div>
+      <div id="disabled" class="alert alert-muted" hidden data-i18n="disabledWarning"></div>
+
+      <!-- 规则 -->
+      <section class="card">
+        <h2 data-i18n="sectionRules"></h2>
+        <p class="hint" data-i18n="rulesIntro"></p>
+
+        <form id="add-form" class="add-form" autocomplete="off">
+          <input type="text" id="rule-input" class="grow mono" data-i18n-placeholder="ruleInputPlaceholder" />
+          <input type="text" id="note-input" data-i18n-placeholder="notePlaceholder" />
+          <label class="check">
+            <input type="checkbox" id="include-sub" checked />
+            <span data-i18n="includeSubdomains"></span>
+          </label>
+          <button type="submit" class="btn btn-primary" data-i18n="addRule"></button>
+        </form>
+        <div id="add-error" class="error" hidden></div>
+        <div id="add-preview" class="preview" hidden>
+          <div><span class="muted" data-i18n="previewNormalized"></span><code id="preview-rule"></code></div>
+          <div><span class="muted" data-i18n="previewMatches"></span><span id="preview-hits" class="mono"></span></div>
+          <div><span class="muted" data-i18n="previewMisses"></span><span id="preview-misses" class="mono"></span></div>
+        </div>
+
+        <div class="toolbar">
+          <input type="search" id="filter" data-i18n-placeholder="filterPlaceholder" />
+          <span id="rule-count" class="muted"></span>
+        </div>
+
+        <table class="rules">
+          <thead>
+            <tr>
+              <th data-i18n="colRule"></th>
+              <th class="center" data-i18n="colSubdomains"></th>
+              <th class="center" data-i18n="colEnabled"></th>
+              <th data-i18n="colNote"></th>
+              <th class="right" data-i18n="colActions"></th>
+            </tr>
+          </thead>
+          <tbody id="rules-body"></tbody>
+        </table>
+        <p id="rules-empty" class="hint empty" hidden></p>
+      </section>
+
+      <!-- 清扫 -->
+      <section class="card">
+        <h2 data-i18n="sectionSweep"></h2>
+        <p class="hint" data-i18n="sweepHint"></p>
+        <dl class="kv">
+          <dt data-i18n="lastQuickSweep"></dt>
+          <dd id="last-quick"></dd>
+          <dt data-i18n="lastFullSweep"></dt>
+          <dd id="last-full"></dd>
+        </dl>
+        <div class="buttons">
+          <button id="quick-btn" type="button" class="btn btn-secondary" data-i18n="sweepNow"></button>
+          <button id="full-btn" type="button" class="btn btn-secondary" data-i18n="fullSweepNow"></button>
+          <span id="sweep-status" class="muted"></span>
+        </div>
+      </section>
+
+      <!-- 选项 -->
+      <section class="card">
+        <h2 data-i18n="sectionOptions"></h2>
+        <label class="check">
+          <input type="checkbox" id="opt-purgeOnAdd" />
+          <span data-i18n="optPurgeOnAdd"></span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="opt-cleanRecentlyClosed" />
+          <span data-i18n="optCleanRecentlyClosed"></span>
+        </label>
+        <p class="hint indent" data-i18n="optCleanRecentlyClosedHint"></p>
+        <label class="check">
+          <input type="checkbox" id="opt-cleanDownloads" />
+          <span data-i18n="optCleanDownloads"></span>
+        </label>
+        <p class="hint indent" data-i18n="optCleanDownloadsHint"></p>
+        <label class="check">
+          <input type="checkbox" id="opt-showIndicator" />
+          <span data-i18n="optShowIndicator"></span>
+        </label>
+        <p class="hint indent" data-i18n="optShowIndicatorHint"></p>
+        <label class="field">
+          <span data-i18n="optQuickSweepInterval"></span>
+          <select id="opt-quickSweepMinutes"></select>
+        </label>
+      </section>
+
+      <!-- 同步 -->
+      <section class="card">
+        <h2 data-i18n="sectionSync"></h2>
+        <p data-i18n="syncIntro"></p>
+        <ul>
+          <li data-i18n="syncPoint1"></li>
+          <li data-i18n="syncPoint2"></li>
+        </ul>
+        <p data-i18n="syncStrictAdvice"></p>
+        <p class="hint" data-i18n="syncActivityAdvice"></p>
+        <button id="sync-btn" type="button" class="btn btn-secondary" data-i18n="openSyncSettings"></button>
+      </section>
+
+      <!-- 导入导出 -->
+      <section class="card">
+        <h2 data-i18n="sectionData"></h2>
+        <p class="hint" data-i18n="dataHint"></p>
+        <div class="buttons">
+          <button id="export-btn" type="button" class="btn btn-secondary" data-i18n="exportRules"></button>
+          <button id="import-btn" type="button" class="btn btn-secondary" data-i18n="importRules"></button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden />
+        </div>
+      </section>
+
+      <!-- 限制 -->
+      <section class="card">
+        <h2 data-i18n="sectionLimits"></h2>
+        <ul class="hint">
+          <li data-i18n="limit1"></li>
+          <li data-i18n="limit2"></li>
+          <li data-i18n="limit3"></li>
+          <li data-i18n="limit4"></li>
+          <li data-i18n="limit5"></li>
+          <li data-i18n="limit6"></li>
+        </ul>
+      </section>
+    </div>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

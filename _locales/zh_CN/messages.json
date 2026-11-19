@@ -1,0 +1,126 @@
+{
+  "extName": { "message": "URL History Eraser" },
+  "extDescription": { "message": "让指定网址及其子网址的浏览记录不保存、不同步，同时保留登录状态。" },
+  "cmdToggleSite": { "message": "切换当前网站的保护状态" },
+
+  "badgeBlocked": { "message": "浏览器策略禁止删除历史记录，插件无法工作" },
+  "badgeDisabled": { "message": "URL History Eraser：已关闭" },
+
+  "globalSwitch": { "message": "全局开关" },
+  "blockedWarning": { "message": "浏览器策略禁止删除历史记录（常见于公司或学校管理的设备），插件在此环境下无法工作。" },
+  "disabledWarning": { "message": "插件已关闭，访问受保护网址会留下历史记录。" },
+  "never": { "message": "从未" },
+
+  "currentSite": { "message": "当前网站" },
+  "status": { "message": "状态" },
+  "statusProtected": { "message": "已保护" },
+  "statusUnprotected": { "message": "未保护" },
+  "unsupportedPage": { "message": "此页面不是普通网页，无需保护。" },
+  "matchedRule": { "message": "命中规则" },
+  "removeProtection": { "message": "移除保护" },
+  "confirmRemove": { "message": "再次点击确认移除" },
+  "removeParentHint": { "message": "该规则同时保护其他网址，移除后它们也不再受保护。" },
+  "scope": { "message": "保护范围" },
+  "includeSubdomains": { "message": "包含子域名" },
+  "onlyPath": {
+    "message": "仅当前路径 $PATH$",
+    "placeholders": { "path": { "content": "$1" } }
+  },
+  "addProtection": { "message": "加入保护" },
+  "willProtect": {
+    "message": "将保护：$RULE$",
+    "placeholders": { "rule": { "content": "$1" } }
+  },
+  "ruleCount": {
+    "message": "规则 $COUNT$ 条",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "sweepNow": { "message": "立即清扫" },
+  "sweeping": { "message": "清扫中…" },
+  "sweepDone": {
+    "message": "清扫完成，删除 $COUNT$ 条记录",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "sweepFailed": { "message": "清扫失败" },
+  "openSettings": { "message": "设置" },
+  "added": { "message": "已加入保护" },
+  "removed": { "message": "已移除保护" },
+
+  "optionsTitle": { "message": "URL History Eraser 设置" },
+  "sectionRules": { "message": "保护规则" },
+  "rulesIntro": { "message": "访问命中规则的网址时，历史记录会被立即删除。纯域名规则默认包含子域名；带路径的规则按路径段匹配，例如 /foo 命中 /foo/bar，不命中 /foobar。" },
+  "ruleInputPlaceholder": { "message": "example.com 或 https://example.com/path" },
+  "notePlaceholder": { "message": "备注（可选）" },
+  "addRule": { "message": "添加" },
+  "ruleExists": { "message": "该规则已存在" },
+  "errEmpty": { "message": "请输入网址" },
+  "errInvalid": { "message": "无法识别的网址" },
+  "errScheme": { "message": "只支持 http 和 https 网址" },
+  "previewNormalized": { "message": "规范化结果：" },
+  "previewMatches": { "message": "会命中：" },
+  "previewMisses": { "message": "不会命中：" },
+  "filterPlaceholder": { "message": "搜索规则" },
+  "colRule": { "message": "网址规则" },
+  "colSubdomains": { "message": "子域名" },
+  "colEnabled": { "message": "启用" },
+  "colNote": { "message": "备注" },
+  "colActions": { "message": "操作" },
+  "open": { "message": "打开" },
+  "delete": { "message": "删除" },
+  "confirmDeleteRule": {
+    "message": "确定删除规则“$RULE$”？\n\n已删除的历史记录无法恢复；删除规则后，今后访问该网址会正常留下记录。",
+    "placeholders": { "rule": { "content": "$1" } }
+  },
+  "noRules": { "message": "还没有规则，在上方输入网址添加。" },
+  "noMatchRules": { "message": "没有匹配的规则。" },
+  "ruleAdded": { "message": "已添加规则" },
+  "ruleDeleted": { "message": "已删除规则" },
+  "saved": { "message": "已保存" },
+
+  "sectionSweep": { "message": "清扫" },
+  "sweepHint": { "message": "快速清扫按域名检索历史，速度快；全量清扫逐条检查全部历史，历史很多时需要一些时间。两者都会定时自动执行。" },
+  "lastQuickSweep": { "message": "上次快速清扫" },
+  "lastFullSweep": { "message": "上次全量清扫" },
+  "fullSweepNow": { "message": "立即全量清扫" },
+
+  "sectionOptions": { "message": "选项" },
+  "optPurgeOnAdd": { "message": "新增规则时，清除该网址已有的历史记录" },
+  "optCleanRecentlyClosed": { "message": "清理“最近关闭的标签页”中的受保护网址" },
+  "optCleanRecentlyClosedHint": { "message": "原理是短暂重新写入一次历史再删除，以触发 Chrome 的联动清理。开启历史同步时，会多一次极短的上传窗口。" },
+  "optCleanDownloads": { "message": "清理受保护网址的下载记录（只移除列表中的记录，不删除文件）" },
+  "optCleanDownloadsHint": { "message": "开启时会请求“管理下载内容”权限。" },
+  "permissionDenied": { "message": "未获得权限，无法开启该功能。" },
+  "optShowIndicator": { "message": "当前标签页受保护时，工具栏图标变为彩色" },
+  "optShowIndicatorHint": { "message": "不希望旁人从图标看出端倪时可以关闭。" },
+  "optQuickSweepInterval": { "message": "快速清扫间隔" },
+  "minutes": {
+    "message": "$N$ 分钟",
+    "placeholders": { "n": { "content": "$1" } }
+  },
+
+  "sectionSync": { "message": "同步设置" },
+  "syncIntro": { "message": "插件删除历史时会同时生成同步删除指令，其他设备上的记录最终会消失。但有两点插件无法控制：" },
+  "syncPoint1": { "message": "从写入到删除之间的瞬间，记录可能已经上传，之后才被删除指令清掉。" },
+  "syncPoint2": { "message": "Chrome 会把当前打开的标签页同步给其他设备，受保护页面开着时，其他设备能看到它。" },
+  "syncStrictAdvice": { "message": "严格模式：在同步设置中关闭“历史记录”和“打开的标签页”两项，受保护网址就完全不会上传。" },
+  "syncActivityAdvice": { "message": "如果 Google 账号开启了“网络与应用活动记录”并包含 Chrome 历史记录，严格场景下建议一并关闭。" },
+  "openSyncSettings": { "message": "打开同步设置" },
+
+  "sectionData": { "message": "导入 / 导出" },
+  "dataHint": { "message": "规则只保存在本机，不会同步。需要在多台设备上使用时，请通过导入 / 导出迁移。" },
+  "exportRules": { "message": "导出规则" },
+  "importRules": { "message": "导入规则" },
+  "importDone": {
+    "message": "导入完成，新增 $COUNT$ 条规则",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "importFailed": { "message": "导入失败：文件格式不正确" },
+
+  "sectionLimits": { "message": "已知限制" },
+  "limit1": { "message": "不是零写入：记录会先写入再被立即删除，中间存在极短的时间窗。" },
+  "limit2": { "message": "为保留登录状态，Cookie 等站点数据不会清除，域名会出现在 Chrome 的“网站数据”列表中。" },
+  "limit3": { "message": "登录时跳转经过的第三方域名（如统一登录）、在搜索引擎上搜索该网站留下的记录，需要另外添加规则。" },
+  "limit4": { "message": "规则列表以明文保存在本机，打开本页即可看到。" },
+  "limit5": { "message": "删除历史时 Chrome 会联动修剪标签页的后退记录，并清除“上次会话”的恢复数据。" },
+  "limit6": { "message": "如果浏览器策略禁止删除历史记录（受管设备），插件无法工作。" }
+}

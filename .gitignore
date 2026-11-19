@@ -1,0 +1,5 @@
+desgin.md
+tests/*
+tests/rule.test.js
+tests/e2e/smoke.mjs
+README.md
